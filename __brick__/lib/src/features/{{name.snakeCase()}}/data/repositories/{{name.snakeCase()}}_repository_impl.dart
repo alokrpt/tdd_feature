@@ -9,21 +9,23 @@ import '../../domain/usecases/{{name.snakeCase()}}_use_case.dart';
 import '../datasources/{{name.snakeCase()}}_remote_data_source.dart';
 
 class {{name.pascalCase()}}RepositoryImpl implements {{name.pascalCase()}}Repository {
-  final {{name.pascalCase()}}RemoteDataSource remoteDataSource;
+  final {{name.pascalCase()}}RemoteDataSource dataSource;
   final NetworkInfo networkInfo;
 
   {{name.pascalCase()}}RepositoryImpl({
-    required this.remoteDataSource,
+    required this.dataSource,
     required this.networkInfo,
   });
 
   @override
   Future<Either<Failure, {{name.pascalCase()}}Entity>> {{name.camelCase()}}(
-      {{name.pascalCase()}}Params params) async {
+      {{name.pascalCase()}}Params params) async => _result(()=> dataSource.{{name.camelCase()}}(params),);
+
+    Future<Either<Failure, T>> _result<T>(
+      Future<T> Function() callback) async {
     if (await networkInfo.isConnected) {
       try {
-        final result = await remoteDataSource.{{name.camelCase()}}(params);
-        return Right(result);
+        return Right(await callback());
       } on NoDataException {
         return Left(NoDataFailure());
       } on ServerException {
