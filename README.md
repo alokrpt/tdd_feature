@@ -24,3 +24,5 @@ A few resources to get you started if this is your first brick template:
 To Use:
 
 dart pub global activate mason_cli
+mason add -g tdd_feature --git-url https://github.com/alokrpt/tdd_feature.git
+
