@@ -10,5 +10,13 @@ abstract class {{name.pascalCase()}}RemoteDataSource {
 }
 
 class {{name.pascalCase()}}RemoteDataSourceImpl implements {{name.pascalCase()}}RemoteDataSource{
-    
+    final GraphQlHelper client;
+    {{name.pascalCase()}}RemoteDataSourceImpl(this.client);
+
+    @override
+    Future<{{name.pascalCase()}}Entity> {{name.camelCase()}}({{name.pascalCase()}}Params params) async {
+      //TODO: Implement {{name.pascalCase()}}
+      throw UnimplementedError();
+    }
+
 }
