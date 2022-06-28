@@ -18,5 +18,4 @@ class {{name.pascalCase()}}RemoteDataSourceImpl implements {{name.pascalCase()}}
       //TODO: Implement {{name.pascalCase()}}
       throw UnimplementedError();
     }
-
 }
