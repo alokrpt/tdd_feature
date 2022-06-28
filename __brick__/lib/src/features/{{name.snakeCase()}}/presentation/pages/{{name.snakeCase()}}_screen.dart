@@ -20,8 +20,8 @@ class {{name.pascalCase()}}Screen extends StatelessWidget {
           builder: (context, state) {
             return CustomScrollView(
               slivers: [
-                CustomSliverAppBar(
-                  title: "{{name.sentenceCase()}}",
+              const  CustomSliverAppBar(
+                  title: "{{name.titleCase()}}",
                 ),
                 if (state is {{name.pascalCase()}}Loading)
                   sliverCenterLoader
@@ -30,10 +30,10 @@ class {{name.pascalCase()}}Screen extends StatelessWidget {
                     useSliver: true,
                     type: state.type,
                   )
-                else if (state is {{name.pascalCase()}}Loaded)
+                else if (state is {{name.pascalCase()}}Success)
                   SliverToBoxAdapter(
                     child: Column(
-                      children: [
+                      children: const [
                         // TODO: Insert your own widgets.
                       ]
                     ),
