@@ -5,8 +5,8 @@ import '../../../../core/error/failures.dart';
 import '../../../../core/network/network_info.dart';
 import '../../domain/entities/{{name.snakeCase()}}_entity.dart';
 import '../../domain/repositories/{{name.snakeCase()}}_repository.dart';
-import '../../domain/use_cases/{{name.snakeCase()}}_use_case.dart';
-import '../data_sources/{{name.snakeCase()}}_remote_data_source.dart';
+import '../../domain/usecases/{{name.snakeCase()}}_use_case.dart';
+import '../datasources/{{name.snakeCase()}}_remote_data_source.dart';
 
 class {{name.pascalCase()}}RepositoryImpl implements {{name.pascalCase()}}Repository {
   final {{name.pascalCase()}}RemoteDataSource remoteDataSource;

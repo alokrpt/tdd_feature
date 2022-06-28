@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 
 import '../../../../core/utils/failure_type.dart';
 import '../../domain/entities/{{name.snakeCase()}}_entity.dart';
-import '../../domain/use_cases/{{name.snakeCase()}}_use_case.dart';
+import '../../domain/usecases/{{name.snakeCase()}}_use_case.dart';
 
 part '{{name.snakeCase()}}_state.dart';
 

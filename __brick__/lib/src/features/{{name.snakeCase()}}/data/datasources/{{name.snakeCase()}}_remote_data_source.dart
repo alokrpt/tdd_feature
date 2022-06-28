@@ -1,6 +1,6 @@
 import '../../../../core/network/graphql_helper.dart';
 import '../../domain/entities/{{name.snakeCase()}}_entity.dart';
-import '../../domain/use_cases/{{name.snakeCase()}}_use_case.dart';
+import '../../domain/usecases/{{name.snakeCase()}}_use_case.dart';
 
 abstract class {{name.pascalCase()}}RemoteDataSource {
   /// get {{name.lowerCase}} from server
