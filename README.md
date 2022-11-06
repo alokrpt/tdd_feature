@@ -1,6 +1,6 @@
 # tdd_feature
 
-[![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
+[![Powered by HiCypher](hicypher@gmail.com)
 
 A new brick created with the Mason CLI.
 
@@ -26,4 +26,12 @@ To Use:
 dart pub global activate mason_cli
 
 mason add -g tdd_feature --git-url https://github.com/alokrpt/tdd_feature.git
+
+To Contribute:
+
+mason init
+
+mason add tdd_feature --path tdd_feature
+
+
 
