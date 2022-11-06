@@ -8,15 +8,15 @@ import '../../domain/usecases/{{name.snakeCase()}}_use_case.dart';
 part '{{name.snakeCase()}}_state.dart';
 
 class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
-  {{name.pascalCase()}}Cubit(this.useCase) : super({{name.pascalCase()}}Initial());
-  final {{name.pascalCase()}}UseCase useCase;
+  {{name.pascalCase()}}Cubit({required this.{{name.camelCase()}}UseCase,}) : super({{name.pascalCase()}}Initial());
+  final {{name.pascalCase()}}UseCase {{name.camelCase()}}UseCase;
 
     Future<void> {{name.camelCase()}}({required String id}) async {
     emit({{name.pascalCase()}}Loading());
-    final result = await useCase({{name.pascalCase()}}Params(id));
+    final result = await {{name.camelCase()}}UseCase({{name.pascalCase()}}Params(id: id));
     result.fold(
         (failure) =>
             emit({{name.pascalCase()}}Failed(FailureTypeHelper.fromFailure(failure))),
-        (entity) => emit({{name.pascalCase()}}Success({{name.camelCase()}}Entity: entity)));
+        (entity) => emit({{name.pascalCase()}}Loaded({{name.camelCase()}}Entity: entity)));
   }
 }

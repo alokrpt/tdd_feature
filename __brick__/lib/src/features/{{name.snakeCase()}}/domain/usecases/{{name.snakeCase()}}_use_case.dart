@@ -22,7 +22,7 @@ class {{name.pascalCase()}}UseCase
 class {{name.pascalCase()}}Params extends Equatable {
   final String id;
 
-  const {{name.pascalCase()}}Params(this.id);
+  const {{name.pascalCase()}}Params({required this.id,});
 
   @override
   List<Object?> get props => [id];

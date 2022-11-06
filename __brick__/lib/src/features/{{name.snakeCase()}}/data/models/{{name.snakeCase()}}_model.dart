@@ -6,4 +6,10 @@ class {{name.pascalCase()}}Model extends {{name.pascalCase()}}Entity {
   }) : super(
           id:id,
         );
+
+  factory {{name.pascalCase()}}Model.fromJson(Map<String, dynamic> json){
+    return {{name.pascalCase()}}Model(
+      id: json['id']
+    );
+  }    
 }

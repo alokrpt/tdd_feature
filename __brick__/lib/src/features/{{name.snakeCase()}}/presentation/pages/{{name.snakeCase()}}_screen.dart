@@ -14,7 +14,7 @@ class {{name.pascalCase()}}Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          {{name.pascalCase()}}Cubit(sl())..{{name.camelCase()}}(id: "demoId"),
+          {{name.pascalCase()}}Cubit({{name.camelCase()}}UseCase: sl(),)..{{name.camelCase()}}(id: "demoId"),
       child: Scaffold(
         body: BlocBuilder<{{name.pascalCase()}}Cubit, {{name.pascalCase()}}State>(
           builder: (context, state) {
@@ -30,7 +30,7 @@ class {{name.pascalCase()}}Screen extends StatelessWidget {
                     useSliver: true,
                     type: state.type,
                   )
-                else if (state is {{name.pascalCase()}}Success)
+                else if (state is {{name.pascalCase()}}Loaded)
                   SliverToBoxAdapter(
                     child: Column(
                       children: const [
